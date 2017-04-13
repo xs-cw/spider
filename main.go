@@ -24,11 +24,12 @@ func main() {
 	//	Remix(cs, 10)
 	//	for {
 	//	}
-	a := make([]int, 100)
-	for k := range a {
-		a[k] = k + 1
-		fmt.Printf("\r%v", k+1)
-	}
+
+	// a := make([]int, 100)
+	// for k := range a {
+	// 	a[k] = k + 1
+	// 	fmt.Printf("\r%v", k+1)
+	// }
 }
 
 // Chapter 书籍章节
@@ -72,6 +73,7 @@ func getmenus(link string) (cs []Chapter) {
 			CID:  i,
 			Name: li.Text(),
 		}
+
 		href, ok := li.Children().Attr("href")
 		if ok {
 			if strings.Contains(href, "www.") {
@@ -154,7 +156,7 @@ func remix(cs []Chapter, index string) {
 	fmt.Println("\n" + index + "写入完成")
 }
 
-//进度显示
+//进度显示(占坑)
 func progress(total, step int) {
 	t := []rune("[" + strings.Repeat(" ", 50) + "]")
 	i := 0
